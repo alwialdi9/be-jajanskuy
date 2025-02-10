@@ -5,25 +5,21 @@ import (
 	"os"
 
 	"github.com/alwialdi9/be-jajanskuy/config"
-	"github.com/alwialdi9/be-jajanskuy/internal/middlewares"
 	"github.com/alwialdi9/be-jajanskuy/internal/routers"
 	"github.com/alwialdi9/be-jajanskuy/internal/utils"
-	"github.com/gofiber/fiber/v2/middleware/cors"
 	"github.com/joho/godotenv"
 	log "github.com/sirupsen/logrus"
 )
 
 func App() {
 	os.Setenv("TZ", "Asia/Jakarta")
-	_ = godotenv.Load()
+	godotenv.Load()
 
 	utils.InitLogger()
 
 	config.ConnectDatabase()
 
 	app := routers.Route()
-	app.Use(cors.New())
-	app.Use(middlewares.LoggerMiddleware)
 
-	log.Fatal(app.Listen(fmt.Sprintf(":%s", os.Getenv("PORT"))))
+	log.Fatal(app.Listen(fmt.Sprintf("0.0.0.0:%s", os.Getenv("PORT"))))
 }

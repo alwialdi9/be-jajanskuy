@@ -32,7 +32,8 @@ func ConnectDatabase() {
 	DB, err = gorm.Open(dialector, &gorm.Config{})
 	if err != nil {
 		utils.LogError("Failed to connect to database", err, log.Fields{})
+	} else {
+		utils.LogInfo("✅ Database connected successfully", log.Fields{})
 	}
 
-	utils.LogInfo("✅ Database connected successfully", log.Fields{})
 }

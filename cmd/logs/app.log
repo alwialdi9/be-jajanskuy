@@ -1,1 +1,4 @@
 {"level":"info","msg":"✅ Database connected successfully","time":"2025-02-09T22:11:41+07:00"}
+{"error":"cannot parse `host= user= password=xxxxx dbname= port= sslmode=disable TimeZone=Asia/Jakarta`: invalid port (strconv.ParseUint: parsing \"sslmode=disable\": invalid syntax)","level":"error","msg":"Failed to connect to database","time":"2025-02-10T23:48:33+07:00"}
+{"level":"info","msg":"✅ Database connected successfully","time":"2025-02-10T23:48:54+07:00"}
+{"level":"info","msg":"✅ Database connected successfully","time":"2025-02-10T23:49:11+07:00"}
